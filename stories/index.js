@@ -169,3 +169,4 @@ storiesOf("Appointment", module)
       onCancel={action("onCancel")}
     />
   ))
+  .add("Status", () => <Status message="Deleting" />)
