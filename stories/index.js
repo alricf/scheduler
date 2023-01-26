@@ -139,3 +139,10 @@ storiesOf("InterviewerListItem", module)
       onChange={action("setInterviewer")}
     />
   ));
+
+// Appointment Stories
+storiesOf("Appointment", module)
+  .addParameters({
+    backgrounds: [{ name: "white", value: "#fff", default: true }]
+  })
+  .add("Appointment", () => <Appointment />)
