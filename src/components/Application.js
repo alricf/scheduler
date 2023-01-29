@@ -64,7 +64,10 @@ const appointments = {
 };
 
 export default function Application(props) {
+  // Hooks 
   const [day, setDay] = useState("Monday");
+
+  // Functions
   const appointmentComponents = Object.values(appointments).map(appointment => {
     return (
       <Appointment
@@ -74,6 +77,7 @@ export default function Application(props) {
     );
   })
 
+  // Template
   return (
     <main className="layout">
       <section className="sidebar">
