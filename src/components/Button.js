@@ -5,11 +5,14 @@ import "components/Button.scss";
 import classNames from "classnames";
 
 export default function Button(props) {
+
+  // Functions
   const buttonClass = classNames("button", {
     "button--confirm": props.confirm,
     "button--danger": props.danger
   });
 
+  // Template
   return (
     <button
       className={buttonClass}
