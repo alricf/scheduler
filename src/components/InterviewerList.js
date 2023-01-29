@@ -4,6 +4,8 @@ import "components/InterviewerList.scss";
 import InterviewerListItem from "components/InterviewerListItem";
 
 export default function InterviewerList(props) {
+
+  // Functions
   const interviewerList = props.interviewers.map(interviewer => {
     return (
       <InterviewerListItem
@@ -16,6 +18,7 @@ export default function InterviewerList(props) {
     );
   });
 
+  // Template
   return (
     <section className="interviewers">
       <h4 className="interviewers__header text--light">Interviewer</h4>
