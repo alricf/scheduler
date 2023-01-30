@@ -6,8 +6,6 @@ import "components/Appointment";
 import DayList from "components/DayList";
 import Appointment from "components/Appointment";
 
-const [days, setDays] = useState([]);
-
 const appointments = {
   "1": {
     id: 1,
@@ -50,6 +48,15 @@ const appointments = {
 export default function Application(props) {
   // Hooks 
   const [day, setDay] = useState("Monday");
+  const [days, setDays] = useState([]);
+
+  useEffect(() => {
+    const URL = `/api/days`;
+    axios.get(URL).then(response => {
+      console.log(response);
+      setDays([...response.data]);
+    });
+  }, []);
 
   // Functions
   const appointmentComponents = Object.values(appointments).map(appointment => {
@@ -59,7 +66,7 @@ export default function Application(props) {
         {...appointment}
       />
     );
-  })
+  });
 
   // Template
   return (
