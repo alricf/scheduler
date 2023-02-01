@@ -11,3 +11,17 @@ export function getAppointmentsForDay(state, day) {
   // Return array of objects containing appointments based on provided day
   return found.appointments.map(key => state.appointments[key]);
 }
+
+export function getInterview(state, interview) {
+  // Return null if no interview is booked
+  if (!interview) {
+    return null;
+  }
+
+  // Return object with interviewer data
+  return {
+    student: interview.student,
+    interviewer: state.interviewers[interview.interviewer]
+  };
+
+}
