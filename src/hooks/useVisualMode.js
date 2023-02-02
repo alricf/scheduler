@@ -4,10 +4,18 @@ export default function useVisualMode(initial) {
   // Initial mode
   const [mode, setMode] = useState(initial);
 
-  // Transition
-    function transition(mode) {
-      setMode(mode);
-    }
+  // History state
+  const [history, setHistory] = useState([initial]);
 
-  return { mode, transition};
+  // Transition mode
+  function transition(mode) {
+    setMode(mode);
+  }
+
+  // Back mode
+  function Back(){
+
+  }
+
+  return { mode, transition, back };
 }
