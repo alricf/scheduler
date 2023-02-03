@@ -7,6 +7,7 @@ import Show from "./Show";
 import Empty from "./Empty";
 
 import useVisualMode from "hooks/useVisualMode";
+import Form from "./Form";
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
@@ -28,6 +29,11 @@ export default function Appointment(props) {
         <Show
           student={props.interview.student}
           interviewer={props.interview.interviewer}
+        />
+      )}
+      {mode === CREATE && (
+        <Form
+          interviewers={[]}
         />
       )}
     </article>
