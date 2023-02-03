@@ -1,3 +1,4 @@
+// getAppointmentsForDay selector
 export function getAppointmentsForDay(state, day) {
 
   // Find object in days data that matches provided day
@@ -12,6 +13,22 @@ export function getAppointmentsForDay(state, day) {
   return found.appointments.map(key => state.appointments[key]);
 }
 
+// getInterviewersForDay selector
+export function getInterviewersForDay(state, day) {
+
+  // Find object in days data that matches provided day
+  const found = state.days.find(index => day === index.name);
+
+  // Validate if days data is empty or when day is not found
+  if (state.days.length === 0 || found === undefined) {
+    return [];
+  }
+
+  // Return array of objects containing interviewers based on provided day
+  return found.interviewers.map(key => state.interviewers[key]);
+}
+
+// getInterview selector
 export function getInterview(state, interview) {
   // Return null if no interview is booked
   if (!interview) {
