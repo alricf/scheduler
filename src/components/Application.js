@@ -49,7 +49,6 @@ export default function Application(props) {
   }
 
   function cancelInterview(id) {
-    console.log(id);
     return axios.delete(`/api/appointments/${id}`)
       .then((response) => {
         const appointment = {
