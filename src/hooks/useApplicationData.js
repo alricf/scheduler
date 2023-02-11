@@ -23,13 +23,13 @@ export default function useApplicationData() {
 
   const updateSpots = (appointments, appointmentId) => {
     // Find the day with the appointment id
-    const day = state.days.find(d => d.appointments.includes(appointmentId))
+    const day = state.days.find(d => d.appointments.includes(appointmentId));
 
     // Calculate the spots remaining
-    const spots = day.appointments.filter(id => appointments[id].interview === null).length
+    const spots = day.appointments.filter(id => appointments[id].interview === null).length;
 
     // Return the updated spots
-    return state.days.map(d => d.appointments.includes(appointmentId) ? {...d, spots} : d)
+    return state.days.map(d => d.appointments.includes(appointmentId) ? { ...d, spots } : d);
 
   };
 
