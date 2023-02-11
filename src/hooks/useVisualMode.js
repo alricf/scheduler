@@ -9,16 +9,16 @@ export default function useVisualMode(initial) {
 
   // Transition mode
   function transition(mode, replace = false) {
-    if(replace){
+    if (replace) {
       let currentHistory = [...history];
       currentHistory.pop();
       currentHistory.push(mode);
-      setMode(currentHistory[currentHistory.length-1]);
+      setMode(currentHistory[currentHistory.length - 1]);
       setHistory(currentHistory);
     }
-    if(!replace){
-    setMode(mode);
-    setHistory([...history, mode]);
+    if (!replace) {
+      setMode(mode);
+      setHistory([...history, mode]);
     }
   }
 
