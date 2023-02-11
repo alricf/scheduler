@@ -12,12 +12,12 @@ export default function Form(props) {
   const reset = () => {
     setStudent("");
     setInterviewer(null);
-  }
+  };
 
   const cancel = () => {
     reset();
     props.onCancel();
-  }
+  };
 
 
   // Template
@@ -35,9 +35,9 @@ export default function Form(props) {
           />
         </form>
         <InterviewerList
-        onChange={setInterviewer}
-        interviewers={props.interviewers}
-        value={interviewer}
+          onChange={setInterviewer}
+          interviewers={props.interviewers}
+          value={interviewer}
         />
       </section>
       <section className="appointment__card-right">
