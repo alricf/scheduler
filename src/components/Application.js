@@ -8,6 +8,7 @@ import Appointment from "components/Appointment";
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 
 export default function Application(props) {
+
   // Functions
   const {
     state,
@@ -58,4 +59,5 @@ export default function Application(props) {
       </section>
     </main>
   );
+
 }
