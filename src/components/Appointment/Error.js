@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Error(props) {
+
   // Template
   return (
     <main className="appointment__card appointment__card--error">
@@ -16,4 +17,5 @@ export default function Error(props) {
       />
     </main>
   );
+  
 }

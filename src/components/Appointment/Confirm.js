@@ -3,7 +3,7 @@ import React from "react";
 import Button from "components/Button";
 
 export default function Confirm(props) {
-  
+
   // Template
   return (
     <main className="appointment__card appointment__card--confirm">
@@ -14,4 +14,5 @@ export default function Confirm(props) {
       </section>
     </main>
   );
+  
 }
