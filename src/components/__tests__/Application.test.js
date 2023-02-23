@@ -9,39 +9,57 @@ afterEach(cleanup);
 
 describe("Application", () => {
   it("defaults to Monday and changes the schedule when a new day is selected", () => {
+    // 1. Render the Application.
     const { getByText } = render(<Application />);
 
+    // 2. Wait for Element with "Monday".
     return waitForElement(() => getByText("Monday")).then(() => {
+
+      // 3. Click "Tuesday" button.
       fireEvent.click(getByText("Tuesday"));
+
+      // 4. Verify expected "Leopold Silvers" text.
       expect(getByText("Leopold Silvers")).toBeInTheDocument();
     });
   });
 
   it("loads data, books an interview and reduces the spots remaining for Monday by 1", async () => {
+    // 1. Render the Application.
     const { container, debug } = render(<Application />);
 
+    // 2. Wait for element with "Archie Cohen".
     await waitForElement(() => getByText(container, "Archie Cohen"));
 
+    // 3. Select empty appointment.
     const appointments = getAllByTestId(container, "appointment");
     const appointment = appointments[0];
 
+    // 4. Click empty appointment button.
     fireEvent.click(getByAltText(appointment, "Add"));
 
+    // 5. Input student name value to "Lydia Miller-Jones" in the form.
     fireEvent.change(getByPlaceholderText(appointment, /enter student name/i), {
       target: { value: "Lydia Miller-Jones" }
     });
 
+    // 6. Select interviewer as "Sylvia Palmer" in the form.
     fireEvent.click(getByAltText(appointment, "Sylvia Palmer"));
+
+    // 7. Click save button in the form.
     fireEvent.click(getByText(appointment, "Save"));
 
+    // 8. Verify "Saving" status appears.
     expect(getByText(appointment, "Saving")).toBeInTheDocument();
 
+    // 9. Wait for new booked interview to appear.
     await waitForElement(() => getByText(appointment, "Lydia Miller-Jones"));
 
+    // 10. Select "Monday" from side-bar.
     const day = getAllByTestId(container, "day").find(day =>
       queryByText(day, "Monday")
     );
 
+    // 11. Verify the spots for Monday has been reduced by 1.
     expect(getByText(day, "no spots remaining")).toBeInTheDocument();
   });
 
