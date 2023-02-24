@@ -21,6 +21,7 @@ export default function useApplicationData() {
     });
   }, []);
 
+  // Functions
   const updateSpots = (appointments, appointmentId) => {
     // Find the day with the appointment id
     const day = state.days.find(d => d.appointments.includes(appointmentId));
