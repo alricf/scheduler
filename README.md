@@ -1,9 +1,22 @@
 # Interview Scheduler
-A client-application that uses the React JavaScript library along with the React Hooks API to build a single-page application that provides a user interface to book interviews for students.
+A client-application that uses the React JavaScript library along with the React Hooks API to build a single-page application that provides a user interface to book interview appointments for students.
 
-Storybook, JEST and Cypress development environments were used to test the React components.
+Storybook, JEST and Cypress development environments were used to test the React functional components.
 
-The application communicates with an API server over HTTP called Interview Scheduler Api.
+The application communicates with an API server over HTTP called Interview Scheduler API.
+
+## Final Product
+* Show Appointment
+![Show Appointment](docs/show-appointment.png)
+
+* Appointment Form
+![Appointment Form](docs/appointment-form.png)
+
+* Confirm Delete Appointment Message
+![Confirm Delete Appointment Message](docs/confirm-delete-appointment-message.png)
+
+* Error Message
+![Error Message](docs/error-message.png)
 
 ## Setup
 
