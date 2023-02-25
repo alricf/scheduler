@@ -34,7 +34,7 @@ The application communicates with an API server over HTTP called Interview Sched
   * PGPORT=5432
 ```
 7. Run the Interview Scheduler API servers with `npm start`.
-8. Use the browser to navigate to http://localhost:8001/api/debug/reset in order to reset the API database.
+8. Use the browser to navigate to http://localhost:8001/api/debug/reset in order to reset the API database. The development data is random and each time the database is reset, there will be different appointments.
 9. Run the Interview Scheduler Webpack Development Server.
 
 ## Running Webpack Development Server
